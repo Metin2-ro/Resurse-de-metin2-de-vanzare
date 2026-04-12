@@ -6,13 +6,11 @@
     <title>Metin2 Resources & Servers</title>
     <style>
         body { font-family: 'Segoe UI', Arial, sans-serif; background: #0f0f0f; color: #eee; text-align: center; padding: 20px; margin: 0; }
-        .container { background: #1a1a1a; padding: 40px; border-radius: 20px; border: 1px solid #d4af37; max-width: 700px; margin: 50px auto; box-shadow: 0 0 30px rgba(212, 175, 55, 0.1); }
+        .container { background: #1a1a1a; padding: 40px; border-radius: 20px; border: 1px solid #d4af37; max-width: 800px; margin: 50px auto; box-shadow: 0 0 30px rgba(212, 175, 55, 0.1); }
         h1 { color: #d4af37; text-transform: uppercase; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
         p { font-size: 1.1rem; line-height: 1.6; color: #bbb; }
         
         .services { display: flex; gap: 20px; justify-content: center; margin-top: 40px; flex-wrap: wrap; }
-        
-        /* Carduri Clickabile */
         .service-card { 
             background: #252525; padding: 20px; border-radius: 12px; width: 280px; 
             border-bottom: 3px solid #d4af37; cursor: pointer; transition: 0.3s;
@@ -20,14 +18,21 @@
         .service-card:hover { transform: translateY(-5px); background: #303030; border-color: #fff; }
         .service-card h3 { color: #d4af37; margin-top: 0; }
 
-        .discord-box { margin-top: 40px; padding: 20px; border: 1px dashed #5865F2; border-radius: 10px; background: rgba(88, 101, 242, 0.05); }
-        .discord-tag { display: block; font-size: 1.5rem; color: #5865F2; font-weight: bold; margin: 10px 0; letter-spacing: 1px; }
+        /* Galerie Foto */
+        .section-title { color: #d4af37; margin-top: 60px; text-transform: uppercase; font-size: 1.5rem; border-bottom: 1px solid #333; display: inline-block; padding-bottom: 5px; }
+        .gallery { margin-top: 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; padding: 10px; }
+        .gallery-item { border: 1px solid #d4af37; border-radius: 8px; overflow: hidden; cursor: pointer; transition: 0.3s; height: 150px; }
+        .gallery-item:hover { transform: scale(1.05); box-shadow: 0 0 15px rgba(214, 175, 55, 0.5); }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* Stiluri pentru Pop-up (Modal) */
-        .modal { display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); }
-        .modal-content { background-color: #1a1a1a; margin: 15% auto; padding: 30px; border: 1px solid #d4af37; width: 80%; max-width: 500px; border-radius: 15px; position: relative; text-align: left; }
+        .discord-box { margin-top: 50px; padding: 20px; border: 1px dashed #5865F2; border-radius: 10px; background: rgba(88, 101, 242, 0.05); }
+        .discord-tag { display: block; font-size: 1.5rem; color: #5865F2; font-weight: bold; margin: 10px 0; }
+
+        /* Pop-up (Modal) */
+        .modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); overflow: auto; }
+        .modal-content { background-color: #1a1a1a; margin: 10% auto; padding: 30px; border: 1px solid #d4af37; width: 80%; max-width: 600px; border-radius: 15px; position: relative; text-align: left; }
         .close { color: #d4af37; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
-        .modal-content h2 { color: #d4af37; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        .modal-content img { width: 100%; border-radius: 10px; margin-top: 10px; }
         ul { line-height: 2; color: #ddd; }
     </style>
 </head>
@@ -40,19 +45,32 @@
         <div class="services">
             <div class="service-card" onclick="openModal('modal1')">
                 <h3>Vânzare Resurse</h3>
-                <p>Mape, sisteme C++, iteme personalizate. <br><strong>(Click pentru detalii)</strong></p>
+                <p>Mape, sisteme C++, iteme personalizate. <br><strong>(Detalii)</strong></p>
             </div>
-
             <div class="service-card" onclick="openModal('modal2')">
                 <h3>Creare Server</h3>
-                <p>Configurare Files/Client de la zero. <br><strong>(Click pentru detalii)</strong></p>
+                <p>Configurare Files/Client de la zero. <br><strong>(Detalii)</strong></p>
+            </div>
+        </div>
+
+        <h2 class="section-title">📸 Galerie Prezentare</h2>
+        <div class="gallery">
+            <div class="gallery-item" onclick="openImgModal('https://via.placeholder.com/800x600?text=Imagine+Sistem+1', 'Prezentare Sistem Game')">
+                <img src="https://via.placeholder.com/400x300?text=Sistem+1" alt="Metin2">
+            </div>
+            <div class="gallery-item" onclick="openImgModal('https://via.placeholder.com/800x600?text=Imagine+Mapa+2', 'Prezentare Mapa Noua')">
+                <img src="https://via.placeholder.com/400x300?text=Mapa+2" alt="Metin2">
+            </div>
+            <div class="gallery-item" onclick="openImgModal('https://via.placeholder.com/800x600?text=Imagine+Interfata+3', 'Prezentare Design GUI')">
+                <img src="https://via.placeholder.com/400x300?text=Interfata+3" alt="Metin2">
             </div>
         </div>
 
         <div class="discord-box">
-            <p>Pentru comenzi, adaugă-mă pe Discord:</p>
+            <p>Pentru comenzi sau poze suplimentare, Discord:</p>
             <span class="discord-tag">Metin2Darck#0199</span>
         </div>
+        <p style="margin-top: 20px; font-size: 0.8rem; color: #555;">© 2026 Metin2-ro Projects</p>
     </div>
 
     <div id="modal1" class="modal">
@@ -65,7 +83,6 @@
                 <li>Seturi de Iteme și Costume unice</li>
                 <li>Protecții Anti-Cheat configurate</li>
             </ul>
-            <p style="color:#d4af37">Contactează-mă pentru prețuri!</p>
         </div>
     </div>
 
@@ -79,13 +96,27 @@
                 <li>Echilibrare PvP/PvM de la zero</li>
                 <li>Rezolvare Bug-uri și Optimizare</li>
             </ul>
-            <p style="color:#d4af37">Server gata de start în 48h!</p>
+        </div>
+    </div>
+
+    <div id="imgModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('imgModal')">&times;</span>
+            <h2 id="imgTitle">Prezentare</h2>
+            <img id="fullImg" src="" alt="Full Preview">
         </div>
     </div>
 
     <script>
         function openModal(id) { document.getElementById(id).style.display = "block"; }
         function closeModal(id) { document.getElementById(id).style.display = "none"; }
+        
+        function openImgModal(src, title) {
+            document.getElementById('imgModal').style.display = "block";
+            document.getElementById('fullImg').src = src;
+            document.getElementById('imgTitle').innerText = title;
+        }
+
         window.onclick = function(event) {
             if (event.target.className === 'modal') { event.target.style.display = "none"; }
         }
