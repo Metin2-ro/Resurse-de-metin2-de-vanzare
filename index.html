@@ -5,98 +5,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Metin2 Resources & Servers</title>
     <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; background: #0f0f0f; color: #eee; text-align: center; padding: 20px; margin: 0; }
-        .container { background: #1a1a1a; padding: 40px; border-radius: 20px; border: 1px solid #d4af37; max-width: 900px; margin: 50px auto; box-shadow: 0 0 30px rgba(212, 175, 55, 0.1); }
-        h1 { color: #d4af37; text-transform: uppercase; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-        p { font-size: 1.1rem; color: #bbb; }
-        
-        .services { display: flex; gap: 20px; justify-content: center; margin-top: 40px; flex-wrap: wrap; }
-        .service-card { 
-            background: #252525; padding: 25px; border-radius: 12px; width: 300px; 
-            border-bottom: 3px solid #d4af37; cursor: pointer; transition: 0.3s;
+        /* Fundal animat și plăcut */
+        body { 
+            font-family: 'Segoe UI', Arial, sans-serif; 
+            background: linear-gradient(-45deg, #0a0a0a, #1a1a1a, #0f0f0f, #222);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #eee; 
+            text-align: center; 
+            padding: 20px; 
+            margin: 0; 
+            min-height: 100vh;
         }
-        .service-card:hover { transform: translateY(-5px); background: #303030; border-color: #fff; }
-        .service-card h3 { color: #d4af37; margin-top: 0; }
 
-        /* Stil pentru Galeria din Pop-up - Acum mult mai mare */
-        .modal-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 30px; }
-        .modal-gallery img { 
-            width: 100%; 
-            height: auto; /* Se adaptează automat */
-            border-radius: 8px; 
-            cursor: pointer; 
-            border: 2px solid #333; 
-            transition: 0.2s; 
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
-        .modal-gallery img:hover { border-color: #d4af37; transform: scale(1.03); }
 
-        /* Discord Box */
-        .discord-box { margin-top: 60px; padding: 30px; border: 1px dashed #5865F2; border-radius: 10px; background: rgba(88, 101, 242, 0.05); }
-        .discord-list { display: flex; justify-content: center; gap: 30px; margin-top: 20px; flex-wrap: wrap; }
-        .discord-name { font-size: 1.5rem; color: #5865F2; font-weight: bold; background: #252525; padding: 12px 25px; border-radius: 8px; border: 1px solid #5865F2; }
-
-        /* Pop-up (Modal) - MODIFICAT PENTRU DIMENSIUNI MAXIME */
-        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); overflow: auto; }
-        
-        /* Containerul de conținut - Acum mult mai lat și mai înalt */
-        .modal-content { 
-            background-color: #1a1a1a; 
-            margin: 2% auto; /* Mai aproape de partea de sus */
+        /* Container principal cu efect de sticlă (Glassmorphism) */
+        .container { 
+            background: rgba(26, 26, 26, 0.85); 
+            backdrop-filter: blur(10px);
             padding: 40px; 
-            border: 2px solid #d4af37; 
-            width: 90%; /* Ocupă 90% din lățime */
-            max-width: 1200px; /* Lățime maximă mare, ca un site normal */
-            border-radius: 15px; 
-            position: relative; 
-            box-shadow: 0 0 50px rgba(212, 175, 55, 0.3);
+            border-radius: 25px; 
+            border: 1px solid rgba(212, 175, 55, 0.3); 
+            max-width: 900px; 
+            margin: 50px auto; 
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 175, 55, 0.1); 
+        }
+
+        h1 { 
+            color: #d4af37; 
+            text-transform: uppercase; 
+            letter-spacing: 3px; 
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+            font-size: 2.5rem;
         }
         
-        .close { color: #d4af37; float: right; font-size: 35px; font-weight: bold; cursor: pointer; margin-top: -20px; }
-        .modal-content h2 { color: #d4af37; margin-top: 0; font-size: 2rem; border-bottom: 1px solid #333; padding-bottom: 15px; }
+        .services { display: flex; gap: 25px; justify-content: center; margin-top: 40px; flex-wrap: wrap; }
+        
+        .service-card { 
+            background: rgba(45, 45, 45, 0.6); 
+            padding: 30px; 
+            border-radius: 15px; 
+            width: 320px; 
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-bottom: 4px solid #d4af37; 
+            cursor: pointer; 
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover { 
+            transform: translateY(-10px); 
+            background: rgba(60, 60, 60, 0.8); 
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+            border-color: #fff;
+        }
+
+        /* Secțiunea Discord îmbunătățită */
+        .discord-box { 
+            margin-top: 60px; 
+            padding: 30px; 
+            border-radius: 20px; 
+            background: rgba(88, 101, 242, 0.1); 
+            border: 1px solid rgba(88, 101, 242, 0.3);
+        }
+
+        .discord-list { display: flex; justify-content: center; gap: 20px; margin-top: 20px; flex-wrap: wrap; }
+        
+        .discord-name { 
+            font-size: 1.4rem; 
+            color: #fff; 
+            font-weight: bold; 
+            background: #5865F2; 
+            padding: 12px 30px; 
+            border-radius: 50px; 
+            box-shadow: 0 4px 15px rgba(88, 101, 242, 0.4);
+            transition: 0.3s;
+        }
+        .discord-name:hover { transform: scale(1.1); box-shadow: 0 6px 20px rgba(88, 101, 242, 0.6); }
+
+        /* Modal stilizat */
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); overflow: auto; }
+        .modal-content { 
+            background: #111; 
+            margin: 5% auto; 
+            padding: 40px; 
+            border: 1px solid #d4af37; 
+            width: 85%; 
+            max-width: 1100px; 
+            border-radius: 20px; 
+            box-shadow: 0 0 50px rgba(212, 175, 55, 0.2);
+        }
+
+        .modal-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 30px; }
+        .modal-gallery img { width: 100%; border-radius: 10px; border: 2px solid #222; transition: 0.3s; }
+        .modal-gallery img:hover { border-color: #d4af37; }
+
+        .close { color: #d4af37; float: right; font-size: 40px; font-weight: bold; cursor: pointer; }
     </style>
 </head>
 <body>
 
     <div class="container">
         <h1>⚔️ METIN2 SERVICES ⚔️</h1>
-        <p>Expertiză în crearea și configurarea serverelor de Metin2.</p>
+        <p style="font-style: italic; color: #d4af37;">Calitate. Securitate. Profesionalism.</p>
         
         <div class="services">
             <div class="service-card" onclick="openModal('modalVanzare')">
-                <h3>💎 Vânzare Resurse</h3>
-                <p>Vezi catalogul mare de sisteme și mape. <br><strong>(Apasă pentru galerie FOTO)</strong></p>
+                <h3 style="color: #d4af37;">💎 Vânzare Resurse</h3>
+                <p>Explorează sistemele și mapele noastre premium. <br><strong>(Click pentru Galerie)</strong></p>
             </div>
 
             <div class="service-card" onclick="openModal('modalServer')">
-                <h3>🚀 Creare Server</h3>
-                <p>Servicii de instalare și configurare de la zero. <br><strong>(Detalii complete)</strong></p>
+                <h3 style="color: #d4af37;">🚀 Creare Server</h3>
+                <p>Configurări complete de la zero pentru proiectul tău. <br><strong>(Vezi Detalii)</strong></p>
             </div>
         </div>
 
         <div class="discord-box">
-            <p style="margin: 0; font-weight: bold; font-size: 1.1rem;">Pentru comenzi sau detalii, adaugă-ne pe Discord:</p>
+            <p style="margin-bottom: 10px; font-size: 1.2rem;">Contactează-ne pentru suport și comenzi:</p>
             <div class="discord-list">
                 <div class="discord-name">Metin2Darck</div>
                 <div class="discord-name">rusurusu69</div>
             </div>
-            <p style="font-size: 0.9rem; color: #888; margin-top: 20px;">(Copiați numele de mai sus și dați Add Friend în Discord)</p>
         </div>
-        <p style="margin-top: 30px; font-size: 0.8rem; color: #555;">© 2026 Metin2-ro Projects</p>
+        
+        <p style="margin-top: 40px; font-size: 0.8rem; color: #666;">© 2026 Metin2-ro Projects. Toate drepturile rezervate.</p>
     </div>
 
     <div id="modalVanzare" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('modalVanzare')">&times;</span>
-            <h2>Catalog Resurse Disponibile (Galerie Mare)</h2>
-            <p style="margin-bottom: 30px;">Mai jos aveți prezentările sistemelor. Contactați-ne pe Discord pentru prețuri și demo live.</p>
-            
+            <h2 style="color: #d4af37;">Catalog Resurse</h2>
             <div class="modal-gallery">
-                <img src="https://via.placeholder.com/800x600?text=Sistem+1" alt="Preview 1">
-                <img src="https://via.placeholder.com/800x600?text=Sistem+2" alt="Preview 2">
-                <img src="https://via.placeholder.com/800x600?text=Mapa+Noua" alt="Preview 3">
-                <img src="https://via.placeholder.com/800x600?text=Interfata+GUI" alt="Preview 4">
-                <img src="https://via.placeholder.com/800x600?text=Set+Arme" alt="Preview 5">
-                <img src="https://via.placeholder.com/800x600?text=Costume+Noi" alt="Preview 6">
+                <img src="https://via.placeholder.com/600x400?text=Previzualizare+Sistem" alt="Sistem">
+                <img src="https://via.placeholder.com/600x400?text=Previzualizare+Mapa" alt="Mapa">
             </div>
         </div>
     </div>
@@ -104,27 +150,19 @@
     <div id="modalServer" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('modalServer')">&times;</span>
-            <h2>Detalii Complete Servicii Server</h2>
-            <div style="text-align: left; line-height: 1.8; color: #ddd; font-size: 1.1rem; margin-top: 20px;">
-                <p>Oferim servicii profesionale de configurare pentru orice tip de server Metin2 (PvP, PvM Easy/Medium/Hard).</p>
-                <ul style="margin-left: 20px;">
-                    <li><strong>Instalare Bază:</strong> FreeBSD (cele mai noi versiuni compatible), MySQL/MariaDB.</li>
-                    <li><strong>Sursă (Source):</strong> Compilare Game & Client, rezolvare warning-uri, optimizare cod.</li>
-                    <li><strong>Client:</strong> Configurare completă, securizare, criptare pack-uri.</li>
-                    <li><strong>Gameplay:</strong> Echilibrare rase, drop-uri, evoluții, configurare NPC.</li>
-                    <li><strong>Securitate:</strong> Protecție anti-SQL Injection, DDoS la nivel de aplicație, anti-cheat (opțional).</li>
-                    <li><strong>Mentenanță:</strong> Suport tehnic dedicat după lansare.</li>
-                </ul>
-                <p style="color: #d4af37; margin-top: 30px;">Pentru o ofertă personalizată, vă așteptăm pe Discord!</p>
-            </div>
+            <h2 style="color: #d4af37;">Servicii Profesionale</h2>
+            <ul style="text-align: left; font-size: 1.2rem; line-height: 2;">
+                <li>Instalare și Securizare FreeBSD/MySQL</li>
+                <li>Implementare Sisteme complexe în Sursă</li>
+                <li>Design Interfețe și Mape Personalizate</li>
+                <li>Echilibrare completă Gameplay</li>
+            </ul>
         </div>
     </div>
 
     <script>
         function openModal(id) { document.getElementById(id).style.display = "block"; }
         function closeModal(id) { document.getElementById(id).style.display = "none"; }
-        
-        // Închide pop-up-ul dacă dai click în afara containerului
         window.onclick = function(event) {
             if (event.target.className === 'modal') { event.target.style.display = "none"; }
         }
