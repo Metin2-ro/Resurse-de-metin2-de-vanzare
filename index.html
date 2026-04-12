@@ -38,20 +38,36 @@
         }
         .race-btn:hover, .race-btn.active { background: #d4af37; color: #000; }
         
-        /* Sectiuni Imagini */
+        /* Sectiuni Imagini - REZOLVARE MARIME POZA */
         .race-section { display: none; text-align: center; }
         .active-section { display: block; animation: fadeIn 0.5s; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        .image-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 20px; }
-        .image-container img { width: 100%; border-radius: 10px; border: 2px solid #333; transition: 0.3s; }
-        .image-container img:hover { border-color: #d4af37; transform: scale(1.02); }
+        .image-container { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            gap: 20px; 
+            margin-top: 20px; 
+        }
 
-        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); overflow: auto; }
+        .image-container img { 
+            width: auto;           /* Ajustează lățimea automat */
+            max-width: 100%;       /* Nu depășește lățimea ferestrei */
+            max-height: 75vh;      /* Ocupă maxim 75% din înălțimea ecranului */
+            border-radius: 10px; 
+            border: 2px solid #d4af37; 
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            transition: 0.3s; 
+        }
+        
+        .image-container img:hover { transform: scale(1.02); }
+
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); overflow-y: auto; }
         .modal-content { background: #111; margin: 2% auto; padding: 30px; border: 1px solid #d4af37; width: 90%; max-width: 1100px; border-radius: 20px; position: relative; }
         .close { color: #d4af37; float: right; font-size: 35px; cursor: pointer; }
         
-        .discord-name { background: #5865F2; padding: 10px 20px; border-radius: 50px; font-weight: bold; margin: 5px; display: inline-block; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        .discord-name { background: #5865F2; padding: 10px 20px; border-radius: 50px; font-weight: bold; margin: 5px; display: inline-block; }
     </style>
 </head>
 <body>
@@ -60,21 +76,21 @@
 
     <div class="container">
         <h1>⚔️ METIN2 SERVICES ⚔️</h1>
-        <p style="color:#d4af37; font-style: italic;">Resurse Premium structurate pe rase și gen.</p>
+        <p style="color:#d4af37; font-style: italic;">Calitate garantată pentru proiectul tău.</p>
         
         <div class="services">
             <div class="service-card" onclick="openModal('modalVanzare')">
                 <h3>💎 Vânzare Resurse</h3>
-                <p>Catalog complet: Costume & Armuri. <br><strong>(Apasă pentru Categorii)</strong></p>
+                <p>Catalog Costume & Armuri pe rase. <br><strong>(Apasă pentru poze)</strong></p>
             </div>
             <div class="service-card" onclick="openModal('modalServer')">
                 <h3>🚀 Creare Server</h3>
-                <p>Servicii profesionale de configurare.</p>
+                <p>Servicii profesionale de instalare.</p>
             </div>
         </div>
 
         <div style="margin-top: 40px;">
-            <p>Contactează-ne pe Discord:</p>
+            <p>Discord Support:</p>
             <div class="discord-name">Metin2Darck</div>
             <div class="discord-name">rusurusu69</div>
         </div>
@@ -83,11 +99,11 @@
     <div id="modalVanzare" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('modalVanzare')">&times;</span>
-            <h2 style="color:#d4af37">Catalog Resurse pe Rase</h2>
+            <h2 style="color:#d4af37">Resurse pe Rase</h2>
             
             <div class="race-menu">
                 <div class="race-btn" onclick="showRace('war-m')">Warrior (M)</div>
-                <div class="race-btn" id="btn-sura-m" onclick="showRace('sur-m')">Sura (M)</div>
+                <div class="race-btn active" onclick="showRace('sur-m')">Sura (M)</div>
                 <div class="race-btn" onclick="showRace('nin-m')">Ninja (M)</div>
                 <div class="race-btn" onclick="showRace('sam-m')">Saman (M)</div>
                 <div class="race-btn" onclick="showRace('war-f')">Warrior (F)</div>
@@ -96,95 +112,46 @@
                 <div class="race-btn" onclick="showRace('sam-f')">Saman (F)</div>
             </div>
 
-            <div id="war-m" class="race-section">
-                <h3 style="color:#d4af37">Resurse Warrior Masculin</h3>
-                <div class="image-container">
-                    <img src="https://via.placeholder.com/500x300?text=Asteptare+Poza+Warrior+M">
-                </div>
-            </div>
-
             <div id="sur-m" class="race-section active-section">
-                <h3 style="color:#d4af37">Resurse Sura Masculin</h3>
+                <h3 style="color:#d4af37">Sura Masculin</h3>
                 <div class="image-container">
-                    <img src="https://i.postimg.cc/MHVx2LhX/Granny-Viewer-4-13-2026-2-18-11-AM.png">
-                    </div>
-            </div>
-
-            <div id="nin-m" class="race-section">
-                <h3 style="color:#d4af37">Resurse Ninja Masculin</h3>
-                <div class="image-container">
-                    <img src="https://via.placeholder.com/500x300?text=Asteptare+Poza+Ninja+M">
+                    <img src="https://i.postimg.cc/MHVx2LhX/Granny-Viewer-4-13-2026-2-18-11-AM.png" alt="Sura M Resource">
+                    <p>Set Premium 1 - Sura M</p>
                 </div>
             </div>
 
-            <div id="sam-m" class="race-section">
-                <h3 style="color:#d4af37">Resurse Saman Masculin</h3>
-                <div class="image-container">
-                    <img src="https://via.placeholder.com/500x300?text=Asteptare+Poza+Saman+M">
-                </div>
-            </div>
-
-            <div id="war-f" class="race-section">
-                <h3 style="color:#d4af37">Resurse Warrior Feminin</h3>
-                <div class="image-container">
-                    <img src="https://via.placeholder.com/500x300?text=Asteptare+Poza+Warrior+F">
-                </div>
-            </div>
-
-            <div id="sur-f" class="race-section">
-                <h3 style="color:#d4af37">Resurse Sura Feminin</h3>
-                <div class="image-container">
-                    <img src="https://via.placeholder.com/500x300?text=Asteptare+Poza+Sura+F">
-                </div>
-            </div>
-
-            <div id="nin-f" class="race-section">
-                <h3 style="color:#d4af37">Resurse Ninja Feminin</h3>
-                <div class="image-container">
-                    <img src="https://via.placeholder.com/500x300?text=Asteptare+Poza+Ninja+F">
-                </div>
-            </div>
-
-            <div id="sam-f" class="race-section">
-                <h3 style="color:#d4af37">Resurse Saman Feminin</h3>
-                <div class="image-container">
-                    <img src="https://via.placeholder.com/500x300?text=Asteptare+Poza+Saman+F">
-                </div>
-            </div>
+            <div id="war-m" class="race-section"><h3>Warrior Masculin</h3><div class="image-container"><p>In curand...</p></div></div>
+            <div id="nin-m" class="race-section"><h3>Ninja Masculin</h3><div class="image-container"><p>In curand...</p></div></div>
+            <div id="sam-m" class="race-section"><h3>Saman Masculin</h3><div class="image-container"><p>In curand...</p></div></div>
+            <div id="war-f" class="race-section"><h3>Warrior Feminin</h3><div class="image-container"><p>In curand...</p></div></div>
+            <div id="sur-f" class="race-section"><h3>Sura Feminin</h3><div class="image-container"><p>In curand...</p></div></div>
+            <div id="nin-f" class="race-section"><h3>Ninja Feminin</h3><div class="image-container"><p>In curand...</p></div></div>
+            <div id="sam-f" class="race-section"><h3>Saman Feminin</h3><div class="image-container"><p>In curand...</p></div></div>
         </div>
     </div>
 
     <div id="modalServer" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('modalServer')">&times;</span>
-            <h2 style="color:#d4af37">Servicii Server Metin2</h2>
-            <ul style="text-align: left; line-height: 2;">
-                <li>Configurare Sursă (Source)</li>
-                <li>Design Mape & Sisteme C++</li>
-                <li>Echilibrare PvP/PvM</li>
-            </ul>
+            <h2 style="color:#d4af37">Detalii Server</h2>
+            <p>Oferim instalare completa, protectii anti-cheat si sisteme personalizate.</p>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        particlesJS("particles-js", { "particles": { "number": { "value": 60 }, "color": { "value": "#d4af37" }, "line_linked": { "opacity": 0.1 }, "move": { "speed": 1.2 } } });
+        particlesJS("particles-js", { "particles": { "number": { "value": 50 }, "color": { "value": "#d4af37" }, "line_linked": { "opacity": 0.1 }, "move": { "speed": 1 } } });
 
         function openModal(id) { document.getElementById(id).style.display = "block"; }
         function closeModal(id) { document.getElementById(id).style.display = "none"; }
 
         function showRace(raceId) {
             var sections = document.getElementsByClassName('race-section');
-            for (var i = 0; i < sections.length; i++) {
-                sections[i].classList.remove('active-section');
-            }
+            for (var i = 0; i < sections.length; i++) { sections[i].classList.remove('active-section'); }
             document.getElementById(raceId).classList.add('active-section');
             
-            // Highlight buton activ
             var buttons = document.getElementsByClassName('race-btn');
-            for (var i = 0; i < buttons.length; i++) {
-                buttons[i].classList.remove('active');
-            }
+            for (var i = 0; i < buttons.length; i++) { buttons[i].classList.remove('active'); }
             event.currentTarget.classList.add('active');
         }
     </script>
