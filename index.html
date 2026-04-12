@@ -12,8 +12,11 @@
         .services { display: flex; gap: 20px; justify-content: center; margin-top: 40px; flex-wrap: wrap; }
         .service-card { background: #252525; padding: 20px; border-radius: 12px; width: 280px; border-bottom: 3px solid #d4af37; }
         .service-card h3 { color: #fff; margin-top: 0; }
-        .discord-btn { display: inline-block; margin-top: 40px; padding: 15px 35px; background: #5865F2; color: white; text-decoration: none; font-weight: bold; border-radius: 8px; font-size: 1.1rem; transition: 0.3s; }
-        .discord-btn:hover { background: #4752c4; transform: translateY(-3px); }
+        
+        /* Stil pentru secțiunea Discord */
+        .discord-box { margin-top: 40px; padding: 20px; border: 1px dashed #5865F2; border-radius: 10px; background: rgba(88, 101, 242, 0.05); }
+        .discord-tag { display: block; font-size: 1.5rem; color: #5865F2; font-weight: bold; margin: 10px 0; letter-spacing: 1px; }
+        .instruction { font-size: 0.9rem; color: #888; }
     </style>
 </head>
 <body>
@@ -32,8 +35,13 @@
             </div>
         </div>
 
-        <a href="#" class="discord-btn">ALĂTURĂ-TE PE DISCORD</a>
-        <p style="margin-top: 20px; font-size: 0.8rem; color: #555;">© 2026 Metin2-ro Projects</p>
+        <div class="discord-box">
+            <p class="instruction">Pentru comenzi sau întrebări, adaugă-mă pe Discord:</p>
+            <span class="discord-tag">Metin2Darck#0199</span>
+            <p class="instruction">(Copiați numele de mai sus și dați Add Friend în Discord)</p>
+        </div>
+
+        <p style="margin-top: 40px; font-size: 0.8rem; color: #555;">© 2026 Metin2-ro Projects</p>
     </div>
 </body>
 </html>
