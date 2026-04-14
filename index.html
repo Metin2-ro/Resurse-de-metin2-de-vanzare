@@ -30,7 +30,6 @@
         }
         .service-card:hover { transform: translateY(-5px); background: #222; }
 
-        /* Meniu Rase */
         .race-menu { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 30px; }
         .race-btn { 
             background: #222; border: 1px solid #d4af37; color: #d4af37; 
@@ -38,7 +37,6 @@
         }
         .race-btn:hover, .race-btn.active { background: #d4af37; color: #000; }
         
-        /* Sectiuni Imagini - REZOLVARE MARIME POZA */
         .race-section { display: none; text-align: center; }
         .active-section { display: block; animation: fadeIn 0.5s; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -52,9 +50,9 @@
         }
 
         .image-container img { 
-            width: auto;           /* Ajustează lățimea automat */
-            max-width: 100%;       /* Nu depășește lățimea ferestrei */
-            max-height: 75vh;      /* Ocupă maxim 75% din înălțimea ecranului */
+            width: auto; 
+            max-width: 100%; 
+            max-height: 75vh; 
             border-radius: 10px; 
             border: 2px solid #d4af37; 
             box-shadow: 0 0 20px rgba(0,0,0,0.5);
@@ -112,7 +110,7 @@
                 <div class="race-btn" onclick="showRace('sam-f')">Saman (F)</div>
             </div>
 
-<div id="war-m" class="race-section">
+            <div id="war-m" class="race-section">
                 <h3 style="color:#d4af37">Warrior Masculin - Catalog Costume</h3>
                 <div class="image-container">
                     <img src="https://i.postimg.cc/Qt0QtZvb/Granny-Viewer-4-14-2026-3-31-32-PM.png"><p style="color:#d4af37; font-weight:bold;">Perso Premium 1 - 150 EUR</p>
@@ -135,127 +133,31 @@
                 </div>
             </div>
 
-<div id="sur-m" class="race-section active-section">
-    <h3 style="color:#d4af37">Sura Masculin - Catalog Costume</h3>
-    <div class="image-container">
-        
-        <img src="https://i.postimg.cc/hPZrsQQ1/Granny-Viewer-4-13-2026-3-29-09-PM.png">
-        <div style="margin-bottom: 35px;">
-            <p style="margin: 5px 0; font-weight: bold; color: #d4af37;">Perso Premium 1</p>
-            <span style="background: rgba(0, 255, 0, 0.1); border: 1px solid #00ff00; color: #00ff00; padding: 3px 12px; border-radius: 4px; font-weight: bold; font-size: 0.9rem;">150 EUR</span>
-        </div>
+            <div id="sur-m" class="race-section active-section">
+                <h3 style="color:#d4af37">Sura Masculin - Catalog Costume</h3>
+                <div class="image-container">
+                    <img src="https://i.postimg.cc/hPZrsQQ1/Granny-Viewer-4-13-2026-3-29-09-PM.png"><p style="color:#d4af37; font-weight:bold;">Perso Premium 1 - 150 EUR</p>
+                    <img src="https://i.postimg.cc/yYpPj33n/Granny-Viewer-4-13-2026-3-29-23-PM.png"><p style="color:#d4af37; font-weight:bold;">Perso Premium 2 - 250 EUR</p>
+                    <img src="https://i.postimg.cc/02XfnKKc/Granny-Viewer-4-13-2026-3-30-21-PM.png"><p style="color:#d4af37; font-weight:bold;">Perso Premium 3 - 200 EUR</p>
+                    <img src="https://i.postimg.cc/jd3Xcnn8/Granny-Viewer-4-13-2026-3-30-47-PM.png"><p style="color:#d4af37; font-weight:bold;">Perso Premium 4 - 350 EUR</p>
+                    <img src="https://i.postimg.cc/dtNB6ZZH/Granny-Viewer-4-13-2026-3-32-56-PM.png"><p style="color:#d4af37; font-weight:bold;">Perso Premium 5 - 100 EUR</p>
+                    <img src="https://i.postimg.cc/FF8zx9sL/Granny-Viewer-4-13-2026-3-33-11-PM.png"><p style="color:#d4af37; font-weight:bold;">Perso Premium 6 - 280 EUR</p>
+                    <img src="https://i.postimg.cc/BQ7gpPPw/Granny-Viewer-4-13-2026-3-33-32-PM.png"><p style="color:#d4af37; font-weight:bold;">Perso Premium 7 - 120 EUR</p>
+                    <img src="https://i.postimg.cc/7LHZLhmG/Granny-Viewer-4-13-2026-3-33-51-PM.png"><p style="color:#d4af37; font-weight:bold;">Perso Premium 8 - 180 EUR</p>
+                    <img src="https://i.postimg.cc/zBMzpj5V/Granny-Viewer-4-13-2026-3-34-10-PM.png"><p style="color:#d4af37; font-weight:bold;">Perso Premium 9 - 150 EUR</p>
+                    <img src="https://i.postimg.cc/C5qF2qL6/Granny-Viewer-4-13-2026-3-34-34-PM.png"><p style="color:#d4af37; font-weight:bold;">Perso Premium 10 - 300 EUR</p>
+                    <img src="https://i.postimg.cc/2SmZ4z0N/Granny-Viewer-4-13-2026-3-34-47-PM.png"><p style="color:#d4af37; font-weight:bold;">Perso Premium 11 - 450 EUR</p>
+                    <img src="https://i.postimg.cc/mrg15mxv/Granny-Viewer-4-13-2026-3-35-00-PM.png"><p style="color:#d4af37; font-weight:bold;">Perso Premium 12 - 650 EUR</p>
+                    <img src="https://i.postimg.cc/cHKgs6L8/Granny-Viewer-4-13-2026-3-35-23-PM.png"><p style="color:#d4af37; font-weight:bold;">Perso Premium 13 - 400 EUR</p>
+                    <img src="https://i.postimg.cc/d1z7Dvhb/Granny-Viewer-4-13-2026-3-37-10-PM.png"><p style="color:#d4af37; font-weight:bold;">Perso Premium 14 - 350 EUR</p>
+                    <img src="https://i.postimg.cc/4497qKMg/Granny-Viewer-4-13-2026-3-37-25-PM.png"><p style="color:#d4af37; font-weight:bold;">Perso Premium 15 - 200 EUR</p>
+                    <img src="https://i.postimg.cc/m23cZvB3/Granny-Viewer-4-13-2026-3-37-49-PM.png"><p style="color:#d4af37; font-weight:bold;">Perso Premium 16 - 250 EUR</p>
+                    <img src="https://i.postimg.cc/s2x1c1SY/Granny-Viewer-4-13-2026-3-38-34-PM.png"><p style="color:#d4af37; font-weight:bold;">Perso Premium 17 - 350 EUR</p>
+                    <img src="https://i.postimg.cc/QtWt2Pfp/Granny-Viewer-4-13-2026-3-38-51-PM.png"><p style="color:#d4af37; font-weight:bold;">Perso Premium 18 - 200 EUR</p>
+                    <img src="https://i.postimg.cc/XNdqxRZH/Granny-Viewer-4-13-2026-3-40-45-PM.png"><p style="color:#d4af37; font-weight:bold;">Perso Premium 19 - 250 EUR</p>
+                </div>
+            </div>
 
-        <img src="https://i.postimg.cc/yYpPj33n/Granny-Viewer-4-13-2026-3-29-23-PM.png">
-        <div style="margin-bottom: 35px;">
-            <p style="margin: 5px 0; font-weight: bold; color: #d4af37;">Perso Premium 2</p>
-            <span style="background: rgba(0, 255, 0, 0.1); border: 1px solid #00ff00; color: #00ff00; padding: 3px 12px; border-radius: 4px; font-weight: bold; font-size: 0.9rem;">250 EUR</span>
-        </div>
-
-        <img src="https://i.postimg.cc/02XfnKKc/Granny-Viewer-4-13-2026-3-30-21-PM.png">
-        <div style="margin-bottom: 35px;">
-            <p style="margin: 5px 0; font-weight: bold; color: #d4af37;">Perso Premium 3</p>
-            <span style="background: rgba(0, 255, 0, 0.1); border: 1px solid #00ff00; color: #00ff00; padding: 3px 12px; border-radius: 4px; font-weight: bold; font-size: 0.9rem;">200 EUR</span>
-        </div>
-
-        <img src="https://i.postimg.cc/jd3Xcnn8/Granny-Viewer-4-13-2026-3-30-47-PM.png">
-        <div style="margin-bottom: 35px;">
-            <p style="margin: 5px 0; font-weight: bold; color: #d4af37;">Perso Premium 4</p>
-            <span style="background: rgba(0, 255, 0, 0.1); border: 1px solid #00ff00; color: #00ff00; padding: 3px 12px; border-radius: 4px; font-weight: bold; font-size: 0.9rem;">350 EUR</span>
-        </div>
-
-        <img src="https://i.postimg.cc/dtNB6ZZH/Granny-Viewer-4-13-2026-3-32-56-PM.png">
-        <div style="margin-bottom: 35px;">
-            <p style="margin: 5px 0; font-weight: bold; color: #d4af37;">Perso Premium 5</p>
-            <span style="background: rgba(0, 255, 0, 0.1); border: 1px solid #00ff00; color: #00ff00; padding: 3px 12px; border-radius: 4px; font-weight: bold; font-size: 0.9rem;">100 EUR</span>
-        </div>
-
-        <img src="https://i.postimg.cc/FF8zx9sL/Granny-Viewer-4-13-2026-3-33-11-PM.png">
-        <div style="margin-bottom: 35px;">
-            <p style="margin: 5px 0; font-weight: bold; color: #d4af37;">Perso Premium 6</p>
-            <span style="background: rgba(0, 255, 0, 0.1); border: 1px solid #00ff00; color: #00ff00; padding: 3px 12px; border-radius: 4px; font-weight: bold; font-size: 0.9rem;">280 EUR</span>
-        </div>
-
-        <img src="https://i.postimg.cc/BQ7gpPPw/Granny-Viewer-4-13-2026-3-33-32-PM.png">
-        <div style="margin-bottom: 35px;">
-            <p style="margin: 5px 0; font-weight: bold; color: #d4af37;">Perso Premium 7</p>
-            <span style="background: rgba(0, 255, 0, 0.1); border: 1px solid #00ff00; color: #00ff00; padding: 3px 12px; border-radius: 4px; font-weight: bold; font-size: 0.9rem;">120 EUR</span>
-        </div>
-
-        <img src="https://i.postimg.cc/7LHZLhmG/Granny-Viewer-4-13-2026-3-33-51-PM.png">
-        <div style="margin-bottom: 35px;">
-            <p style="margin: 5px 0; font-weight: bold; color: #d4af37;">Perso Premium 8</p>
-            <span style="background: rgba(0, 255, 0, 0.1); border: 1px solid #00ff00; color: #00ff00; padding: 3px 12px; border-radius: 4px; font-weight: bold; font-size: 0.9rem;">180 EUR</span>
-        </div>
-
-        <img src="https://i.postimg.cc/zBMzpj5V/Granny-Viewer-4-13-2026-3-34-10-PM.png">
-        <div style="margin-bottom: 35px;">
-            <p style="margin: 5px 0; font-weight: bold; color: #d4af37;">Perso Premium 9</p>
-            <span style="background: rgba(0, 255, 0, 0.1); border: 1px solid #00ff00; color: #00ff00; padding: 3px 12px; border-radius: 4px; font-weight: bold; font-size: 0.9rem;">150 EUR</span>
-        </div>
-
-        <img src="https://i.postimg.cc/C5qF2qL6/Granny-Viewer-4-13-2026-3-34-34-PM.png">
-        <div style="margin-bottom: 35px;">
-            <p style="margin: 5px 0; font-weight: bold; color: #d4af37;">Perso Premium 10</p>
-            <span style="background: rgba(0, 255, 0, 0.1); border: 1px solid #00ff00; color: #00ff00; padding: 3px 12px; border-radius: 4px; font-weight: bold; font-size: 0.9rem;">300 EUR</span>
-        </div>
-
-        <img src="https://i.postimg.cc/2SmZ4z0N/Granny-Viewer-4-13-2026-3-34-47-PM.png">
-        <div style="margin-bottom: 35px;">
-            <p style="margin: 5px 0; font-weight: bold; color: #d4af37;">Perso Premium 11</p>
-            <span style="background: rgba(0, 255, 0, 0.1); border: 1px solid #00ff00; color: #00ff00; padding: 3px 12px; border-radius: 4px; font-weight: bold; font-size: 0.9rem;">450 EUR</span>
-        </div>
-
-        <img src="https://i.postimg.cc/mrg15mxv/Granny-Viewer-4-13-2026-3-35-00-PM.png">
-        <div style="margin-bottom: 35px;">
-            <p style="margin: 5px 0; font-weight: bold; color: #d4af37;">Perso Premium 12</p>
-            <span style="background: rgba(0, 255, 0, 0.1); border: 1px solid #00ff00; color: #00ff00; padding: 3px 12px; border-radius: 4px; font-weight: bold; font-size: 0.9rem;">650 EUR</span>
-        </div>
-
-        <img src="https://i.postimg.cc/cHKgs6L8/Granny-Viewer-4-13-2026-3-35-23-PM.png">
-        <div style="margin-bottom: 35px;">
-            <p style="margin: 5px 0; font-weight: bold; color: #d4af37;">Perso Premium 13</p>
-            <span style="background: rgba(0, 255, 0, 0.1); border: 1px solid #00ff00; color: #00ff00; padding: 3px 12px; border-radius: 4px; font-weight: bold; font-size: 0.9rem;">400 EUR</span>
-        </div>
-
-        <img src="https://i.postimg.cc/d1z7Dvhb/Granny-Viewer-4-13-2026-3-37-10-PM.png">
-        <div style="margin-bottom: 35px;">
-            <p style="margin: 5px 0; font-weight: bold; color: #d4af37;">Perso Premium 14</p>
-            <span style="background: rgba(0, 255, 0, 0.1); border: 1px solid #00ff00; color: #00ff00; padding: 3px 12px; border-radius: 4px; font-weight: bold; font-size: 0.9rem;">350 EUR</span>
-        </div>
-
-        <img src="https://i.postimg.cc/4497qKMg/Granny-Viewer-4-13-2026-3-37-25-PM.png">
-        <div style="margin-bottom: 35px;">
-            <p style="margin: 5px 0; font-weight: bold; color: #d4af37;">Perso Premium 15</p>
-            <span style="background: rgba(0, 255, 0, 0.1); border: 1px solid #00ff00; color: #00ff00; padding: 3px 12px; border-radius: 4px; font-weight: bold; font-size: 0.9rem;">200 EUR</span>
-        </div>
-
-        <img src="https://i.postimg.cc/m23cZvB3/Granny-Viewer-4-13-2026-3-37-49-PM.png">
-        <div style="margin-bottom: 35px;">
-            <p style="margin: 5px 0; font-weight: bold; color: #d4af37;">Perso Premium 16</p>
-            <span style="background: rgba(0, 255, 0, 0.1); border: 1px solid #00ff00; color: #00ff00; padding: 3px 12px; border-radius: 4px; font-weight: bold; font-size: 0.9rem;">250 EUR</span>
-        </div>
-
-        <img src="https://i.postimg.cc/s2x1c1SY/Granny-Viewer-4-13-2026-3-38-34-PM.png">
-        <div style="margin-bottom: 35px;">
-            <p style="margin: 5px 0; font-weight: bold; color: #d4af37;">Perso Premium 17</p>
-            <span style="background: rgba(0, 255, 0, 0.1); border: 1px solid #00ff00; color: #00ff00; padding: 3px 12px; border-radius: 4px; font-weight: bold; font-size: 0.9rem;">350 EUR</span>
-        </div>
-
-        <img src="https://i.postimg.cc/QtWt2Pfp/Granny-Viewer-4-13-2026-3-38-51-PM.png">
-        <div style="margin-bottom: 35px;">
-            <p style="margin: 5px 0; font-weight: bold; color: #d4af37;">Perso Premium 18</p>
-            <span style="background: rgba(0, 255, 0, 0.1); border: 1px solid #00ff00; color: #00ff00; padding: 3px 12px; border-radius: 4px; font-weight: bold; font-size: 0.9rem;">200 EUR</span>
-        </div>
-
-        <img src="https://i.postimg.cc/XNdqxRZH/Granny-Viewer-4-13-2026-3-40-45-PM.png">
-        <div style="margin-bottom: 35px;">
-            <p style="margin: 5px 0; font-weight: bold; color: #d4af37;">Perso Premium 19</p>
-            <span style="background: rgba(0, 255, 0, 0.1); border: 1px solid #00ff00; color: #00ff00; padding: 3px 12px; border-radius: 4px; font-weight: bold; font-size: 0.9rem;">250 EUR</span>
-        </div>
-
-    </div>
-</div>
-            <div id="war-m" class="race-section"><h3>Warrior Masculin</h3><div class="image-container"><p>In curand...</p></div></div>
             <div id="nin-m" class="race-section"><h3>Ninja Masculin</h3><div class="image-container"><p>In curand...</p></div></div>
             <div id="sam-m" class="race-section"><h3>Saman Masculin</h3><div class="image-container"><p>In curand...</p></div></div>
             <div id="war-f" class="race-section"><h3>Warrior Feminin</h3><div class="image-container"><p>In curand...</p></div></div>
@@ -276,15 +178,12 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         particlesJS("particles-js", { "particles": { "number": { "value": 50 }, "color": { "value": "#d4af37" }, "line_linked": { "opacity": 0.1 }, "move": { "speed": 1 } } });
-
         function openModal(id) { document.getElementById(id).style.display = "block"; }
         function closeModal(id) { document.getElementById(id).style.display = "none"; }
-
         function showRace(raceId) {
             var sections = document.getElementsByClassName('race-section');
             for (var i = 0; i < sections.length; i++) { sections[i].classList.remove('active-section'); }
             document.getElementById(raceId).classList.add('active-section');
-            
             var buttons = document.getElementsByClassName('race-btn');
             for (var i = 0; i < buttons.length; i++) { buttons[i].classList.remove('active'); }
             event.currentTarget.classList.add('active');
